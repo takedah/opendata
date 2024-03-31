@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>発熱外来検索</h1>
+<p><a href="{% url 'outpatient_new' %}">発熱外来を作成する</a></p>
+<h2>発熱外来一覧</h2>
+{% if outpatients %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>作成者</th>
+      <th>作成日</th>
+      <th>医療機関名</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for outpatient in outpatients %}
+    <tr>
+      <td>{{ outpatient.created_by.username }}</td>
+      <td>{{ outpatient.created_at }}</td>
+      <td><a href="{% url 'outpatient_detail' outpatient.id %}">{{ outpatient.medical_institution_name }}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>発熱外来はまだ作成されていません。</p>
+{% endif %}
+{% endblock %}

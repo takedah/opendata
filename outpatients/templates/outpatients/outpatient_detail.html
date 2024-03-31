@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div>
+  <h1>{{ outpatient.medical_institution_name }}</h1>
+  <table>
+    <tbody>
+      <tr>
+        <th>外来対応医療機関</th>
+        <td>{{ outpatient.is_outpatient }}</td>
+      </tr>
+      <tr>
+        <th>陽性者の治療に関与する医療機関</th>
+        <td>{{ outpatient.is_positive_patients }}</td>
+      </tr>
+      <tr>
+        <th>保健所</th>
+        <td>{{ outpatient.public_health_care_center }}</td>
+      </tr>
+      <tr>
+        <th>市町村</th>
+        <td>{{ outpatient.city }}</td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td>{{ outpatient.address }}</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td>{{ outpatient.phone_number }}</td>
+      </tr>
+      <tr>
+        <th>かかりつけ患者以外の診療</th>
+        <td>{{ outpatient.is_target_not_family }}</td>
+      </tr>
+      <tr>
+        <th>小児対応の可否</th>
+        <td>{{ outpatient.is_pediatrics }}</td>
+      </tr>
+      <tr>
+        <th>月</th>
+        <td>{{ outpatient.mon }}</td>
+      </tr>
+      <tr>
+        <th>火</th>
+        <td>{{ outpatient.tue }}</td>
+      </tr>
+      <tr>
+        <th>水</th>
+        <td>{{ outpatient.wed }}</td>
+      </tr>
+      <tr>
+        <th>木</th>
+        <td>{{ outpatient.thu }}</td>
+      </tr>
+      <tr>
+        <th>金</th>
+        <td>{{ outpatient.fri }}</td>
+      </tr>
+      <tr>
+        <th>土</th>
+        <td>{{ outpatient.sat }}</td>
+      </tr>
+      <tr>
+        <th>日</th>
+        <td>{{ outpatient.sun }}</td>
+      </tr>
+      <tr>
+        <th>外来対応</th>
+        <td>{{ outpatient.is_face_to_face_for_positive_patients }}</td>
+      </tr>
+      <tr>
+        <th>オンライン診療</th>
+        <td>{{ outpatient.is_online_for_positive_patients }}</td>
+      </tr>
+      <tr>
+        <th>訪問診療</th>
+        <td>{{ outpatient.is_home_visitation_for_positive_patients }}</td>
+      </tr>
+      <tr>
+        <th>備考</th>
+        <td>{{ outpatient.memo }}</td>
+      </tr>
+      <tr>
+        <th>作成者</th>
+        <td>{{ outpatient.created_by }}</td>
+      </tr>
+      <tr>
+        <th>作成日</th>
+        <td>{{ outpatient.created_at }}</td>
+      </tr>
+      <tr>
+        <th>更新日</th>
+        <td>{{ outpatient.update_at }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
